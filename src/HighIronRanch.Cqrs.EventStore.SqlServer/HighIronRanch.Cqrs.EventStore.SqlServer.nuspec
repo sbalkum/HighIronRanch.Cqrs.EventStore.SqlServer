@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>HighIronRanch.Cqrs.EventStore.SqlServer</id>
+		<version>$version$</version>
+		<title>$title$</title>
+        <authors>$author$</authors>
+        <owners>$author$</owners>
+		<licenseUrl>https://github.com/sbalkum/HighIronRanch.Cqrs.EventStore.SqlServer/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/sbalkum/HighIronRanch.Cqrs.EventStore.SqlServer</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<summary>An event store implementation for Sql Server.</summary>
+		<copyright>$copyright$</copyright>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\HighIronRanch.Cqrs.EventStore.SqlServer.pdb" target="lib\net45\HighIronRanch.Cqrs.EventStore.SqlServer.pdb" />
+    </files>
+</package>
