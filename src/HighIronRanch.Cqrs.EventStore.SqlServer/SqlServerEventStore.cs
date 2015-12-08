@@ -110,7 +110,32 @@ namespace HighIronRanch.Cqrs.EventStore.SqlServer
 
         public IEnumerable<DomainEvent> GetEventsByEventTypes(IEnumerable<Type> domainEventTypes, DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            var events = new List<DomainEvent>();
+
+            var eventParameters = domainEventTypes.Select(TypeToStringHelperMethods.GetString).Join("','");
+
+            using (var connection = new SqlConnection(_settings.SqlServerConnectionString))
+            {
+                connection.Open();
+                var sql = string.Format(SqlConstants.GetEventsByTypeAndDate, 
+                    _settings.SqlServerEventStoreTableName, 
+                    eventParameters,
+                    startDate.ToString("yyyy-MM-ddThh:mm:ss"),
+                    endDate.ToString("yyyy-MM-ddThh:mm:ss"));
+
+                using (var command = new SqlCommand(sql, connection))
+                using (var reader = command.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        var type = reader[SqlConstants.EventTypeColumn].ToString();
+                        var data = reader[SqlConstants.DataColumn].ToString();
+
+                        var domainEvent = _serializer.Deserialize(Type.GetType(type), data);
+                        events.Add(domainEvent);
+                    }
+                connection.Close();
+            }
+            return events;
         }
     }
 }

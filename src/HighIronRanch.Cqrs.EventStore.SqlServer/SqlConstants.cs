@@ -6,6 +6,8 @@
         internal const string DataColumn = "Data";
 
         internal const string GetEventsByType = "SELECT EventType, Data FROM {0} WHERE EventType IN ('{1}')";
+        internal const string GetEventsByTypeAndDate = "SELECT EventType, Data FROM {0} WHERE EventType IN ('{1}') AND EventDate >= '{2}' AND EventDate < '{3}'";
+
         internal const string InsertEvents = "INSERT INTO {0} VALUES ('{1}', '{2}', '{3}', {4}, '{5}')";
         internal const string GetEventsByAggregateRootAndSequence = "SELECT EventType, Data FROM {1} WHERE AggregateRootId = '{2}' AND Sequence >= {3}";
         internal const string CreateTheEventStoreTable = @"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[{0}]') AND type IN (N'U'))
