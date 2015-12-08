@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using SimpleCqrs.Eventing;
-using SimpleCqrs.EventStore.SqlServer;
 
 namespace HighIronRanch.Cqrs.EventStore.SqlServer
 {

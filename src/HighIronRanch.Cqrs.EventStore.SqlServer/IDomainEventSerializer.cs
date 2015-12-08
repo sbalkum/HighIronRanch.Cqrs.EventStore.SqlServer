@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SimpleCqrs.Eventing;
 
-namespace SimpleCqrs.EventStore.SqlServer
+namespace HighIronRanch.Cqrs.EventStore.SqlServer
 {
     public interface IDomainEventSerializer
     {

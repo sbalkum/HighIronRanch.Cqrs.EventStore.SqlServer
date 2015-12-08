@@ -1,7 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
 using SimpleCqrs.Eventing;
-using SimpleCqrs.EventStore.SqlServer;
 
 namespace HighIronRanch.Cqrs.EventStore.SqlServer.Serializers
 {

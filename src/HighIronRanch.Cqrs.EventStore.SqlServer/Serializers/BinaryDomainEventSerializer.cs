@@ -2,7 +2,6 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using SimpleCqrs.Eventing;
-using SimpleCqrs.EventStore.SqlServer;
 
 namespace HighIronRanch.Cqrs.EventStore.SqlServer.Serializers
 {
